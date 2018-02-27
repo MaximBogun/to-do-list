@@ -1,0 +1,77 @@
+
+.footer-controller {
+
+}
+
+mat-card {
+  margin: 15% auto auto;
+  width: 35%;
+}
+
+#todo-list li {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 2px solid #ededed;
+  margin-right: 24px;
+}
+
+.full-width {
+  margin-left: 40px;
+  width: 90%;
+}
+
+.math-input-to-do {
+  width: 200px;
+}
+
+.checkbox-round {
+  width: 1.8em;
+  height: 1.8em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox-round:checked {
+  background-color: lawngreen;
+}
+
+#todo-list li .destroy {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 30px;
+  height: 30px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+#todo-list li .destroy:hover {
+  color: #af5b5e;
+}
+
+#todo-list li .destroy:after {
+  content: '×';
+}
+
+#todo-list li:hover .destroy {
+  display: block;
+}
+
+li {
+  list-style-type: none;
+}
+
+#completed {
+  margin-right: 20px;
+}
+

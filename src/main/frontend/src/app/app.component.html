@@ -1,0 +1,30 @@
+<title>{{title}}</title>
+
+<mat-card>
+
+  <mat-form-field class="full-width">
+    <input matInput placeholder="What needs to be done?" [(ngModel)]="inputValue" autofocus (keyup.enter)="addDeal()">
+  </mat-form-field>
+
+  <ul id="todo-list" *ngFor="let  deal of deals">
+    <div *ngIf="displayDeal(deal)">
+      <li>
+        <input type="checkbox" class="checkbox-round" [(ngModel)]="deal.completed" (click)="countCheckerBox(deal)"
+               id="completed"/>
+        {{deal.content}}
+        <div class="destroy" (click)="removeDeal(deal)"></div>
+      </li>
+    </div>
+  </ul>
+
+
+  <footer class="footer-controller">
+    {{count}} items left
+    <button mat-raised-button (click)="saveDeals()" color="primary">Save</button>
+    <button mat-raised-button (click)="setAll()" color="primary">All</button>
+    <button mat-raised-button (click)="setActive()" color="primary">Active</button>
+    <button mat-raised-button (click)="setCompleted()" color="primary">Completed</button>
+    <button mat-raised-button (click)="removeAllCompleted()" color="primary">Clear all completed</button>
+  </footer>
+
+</mat-card>
