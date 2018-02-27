@@ -10,5 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TodolistApplicationTests {
 	@Test
 	public void contextLoads() {
+		//to do test..
 	}
 }
