@@ -1,7 +1,7 @@
-#To-do-list
+# To-do-list
 
 Angular CLI+Spring Boot
 
-#Run 
+# Run 
 
 docker-compose up
