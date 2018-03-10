@@ -1,1 +1,18 @@
-#To do add docker...
+version: "3.3"
+services:
+  postgres:
+           image: postgres:9.6
+           environment:
+                   POSTGRES_PASSWORD: utility
+                   POSTGRES_USER: utility
+                   POSTGRES_DB: postgres
+  web:
+      image: maven:3-jdk-8
+      volumes:
+            - ./.m2:/root/.m2
+            - ./:/code
+      links:
+        - postgres:postgres
+      ports:
+            - 8080:8080
+      command: /bin/bash -c "cd /code && mvn clean install spring-boot:run"

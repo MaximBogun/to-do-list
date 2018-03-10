@@ -4,6 +4,7 @@ import com.todolist.model.Deal;
 import com.todolist.repository.DealRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,13 +22,13 @@ public class DealController {
 
     @PostMapping("/save")
     public ResponseEntity<List<Deal>> saveDeals(@RequestBody List<Deal> list) {
-        return ResponseEntity.ok(dealRepository.save(list));
+        return new ResponseEntity<>(dealRepository.save(list), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/clear-all-completed")
-    public ResponseEntity.HeadersBuilder<?> clearAllCompleted() {
+    public ResponseEntity clearAllCompleted() {
         dealRepository.deleteAllCompleted();
-        return ResponseEntity.noContent();
+        return  new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
 }
