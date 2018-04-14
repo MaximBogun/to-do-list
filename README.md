@@ -1,6 +1,6 @@
 # To-do-list
 
-Angular CLI+Spring Boot
+Angular 5+Spring Boot
 
 # Run 
 
